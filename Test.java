@@ -2,9 +2,7 @@ package Test;
 
 public class Test{
 
-
-
-    public static void Main() {
+    public static void Main () {
 
         int someVar  = 5;
         int someVar2 = 3;
@@ -16,6 +14,68 @@ public class Test{
     public void InitCity() {
 
     }
+}
+
+
+public class Building implements IBuilding {
+
+    private final String _buildingType;
+    private Vector _existsInX;
+    private Vector _existsInY;
+    private double _price;
+
+    public Building (String buildingType) {
+
+        this._buildingType = buildingType;
+    }
+
+    @Override
+    public boolean BuildIn (int xCoord, int yCoord) {
+
+        try {
+
+            this._existsInX.add(xCoord);
+            this._existsInY.add(yCoord);
+
+            return true;
+        }
+        catch (Exception e) {
+
+            return false;            
+        }
+    }
+
+    @Override
+    public boolean DestroyIn (int xCoord, int yCoord) {
+
+        try {
+
+            this._existsInX.remove(xCoord);
+            this._existsInY.remove(yCoord);
+
+            return true;
+        }
+        catch (Exception e) {
+            
+            return false;
+        }
+    }
+
+    @Override
+    public boolean SetPrice (double price) {
+
+        try {
+
+            this._price = price;
+
+            return  true;
+        }
+        catch (Exception e) {
+
+            return false;            
+        }
+    }
+    
 }
 
 public interface IBuilding{
