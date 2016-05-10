@@ -18,6 +18,12 @@ public class Test{
     }
 }
 
+public interface IBuilding{
+
+    boolean BuildIn (int xCoord, int yCoord);
+    boolean DestroyIn (int xCoord, int yCoord);
+    boolean SetPrice (double price);
+}
 
 public class Transport implements ITransport{
 
