@@ -17,3 +17,8 @@ public class Test{
 
     }
 }
+
+public interface ITransport{
+
+    boolean Move(int toX, int toY, double speed);
+}
